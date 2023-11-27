@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MuvverProject",
-    "slug": "MuvverProject",
+    "name": "MyAppMobile",
+    "slug": "MyAppMobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
