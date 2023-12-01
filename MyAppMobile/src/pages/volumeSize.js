@@ -5,11 +5,17 @@ import { StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import envelope from '../../assets/envelope.svg';
 
-
+import weight from "./weight";
 
 export default function volumeSize() {
 
     const [selectedOption, setSelectedOption] = useState(null);
+
+    const navigation = useNavigation(); 
+
+    const paraPeso = () => {
+        navigation.navigate('weight');
+    };
 
     const options = [
 
@@ -18,7 +24,7 @@ export default function volumeSize() {
                 <>
                     <Image source={require('../../assets/envelope.svg')} style={{ width: 20, height: 20, marginRight: 10, color: '#22D57B' }} />
                     <Text>Envelope</Text>
-                    {/* <Text>00x00 cm</Text> */}
+                    
                 </>
             ),
             value: 'envelope',
@@ -27,7 +33,7 @@ export default function volumeSize() {
         {
             label: (
                 <>
-                <Image source={require('../../assets/livro.svg')} style={{ width: 20, height: 20, marginRight: 10, color: '#22D57B' }} />
+                    <Image source={require('../../assets/livro.svg')} style={{ width: 20, height: 20, marginRight: 10, color: '#22D57B' }} />
                     <Text>Livro</Text>
                 </>
             ),
@@ -37,7 +43,7 @@ export default function volumeSize() {
         {
             label: (
                 <>
-                <Image source={require('../../assets/caixa_pequena.svg')} style={{ width: 20, height: 20, marginRight: 10, color: '#22D57B' }} />
+                    <Image source={require('../../assets/caixa_pequena.svg')} style={{ width: 20, height: 20, marginRight: 10, color: '#22D57B' }} />
                     <Text>Caixa de sapato</Text>
                 </>
             ),
@@ -47,7 +53,7 @@ export default function volumeSize() {
         {
             label: (
                 <>
-                <Image source={require('../../assets/mala_de_mao.svg')} style={{ width: 20, height: 20, marginRight: 10, color: '#22D57B' }} />
+                    <Image source={require('../../assets/mala_de_mao.svg')} style={{ width: 20, height: 20, marginRight: 10, color: '#22D57B' }} />
                     <Text>Mochila</Text>
                 </>
             ),
@@ -57,7 +63,7 @@ export default function volumeSize() {
         {
             label: (
                 <>
-                <Image source={require('../../assets/mala_grande.svg')} style={{ width: 20, height: 20, marginRight: 10, color: '#22D57B' }} />
+                    <Image source={require('../../assets/mala_grande.svg')} style={{ width: 20, height: 20, marginRight: 10, color: '#22D57B' }} />
                     <Text>Mala Grande</Text>
                 </>
             ),
@@ -67,7 +73,7 @@ export default function volumeSize() {
         {
             label: (
                 <>
-                <Image source={require('../../assets/caixa.svg')} style={{ width: 20, height: 20, marginRight: 10, color: '#22D57B' }} />
+                    <Image source={require('../../assets/caixa.svg')} style={{ width: 20, height: 20, marginRight: 10, color: '#22D57B' }} />
                     <Text>Caixa Grande</Text>
                 </>
             ),
@@ -115,21 +121,21 @@ export default function volumeSize() {
                 </View>
                 {selectedOption && <Text>Opção selecionada: {selectedOption}</Text>}
 
+                <View style={{}} >
+                    <TouchableOpacity style={{ width: 350, height: 50, alignItems: 'center', justifyContent: 'center' }}>
+                        <Text style={{ color: 'black' }}>Pular Etapa</Text>
+                    </TouchableOpacity>
+                </View>
 
+                <View style={{}} >
+                    <TouchableOpacity style={style.button} disabled={!selectedOption} onPress={paraPeso}>
+                        <Text style={{ color: 'white' }}>Avançar</Text>
+                    </TouchableOpacity>
+                </View>
 
             </View>
 
-            <View style={{ position: 'absolute', bottom: 60 }} >
-                <TouchableOpacity style={{ width: 350, height: 50, alignItems: 'center', justifyContent: 'center' }}>
-                    <Text style={{ color: 'black' }}>Pular Etapa</Text>
-                </TouchableOpacity>
-            </View>
 
-            <View style={{ position: 'absolute', bottom: 20 }} >
-                <TouchableOpacity style={style.button}>
-                    <Text style={{ color: 'white' }}>Avançar</Text>
-                </TouchableOpacity>
-            </View>
 
         </View>
 
@@ -140,9 +146,7 @@ const style = StyleSheet.create({
     container: {
         backgroundColor: "#FFFFFF",
         alignItems: 'center',
-        justifyContent: 'flex-start',
-        width: 375,
-        height: 850,
+
     },
     button: {
         width: 350,
@@ -151,6 +155,7 @@ const style = StyleSheet.create({
         backgroundColor: 'green',
         alignItems: 'center',
         justifyContent: 'center',
+        
 
     },
     topBar: {

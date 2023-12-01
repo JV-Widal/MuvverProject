@@ -2,19 +2,25 @@ import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import Slider from '@react-native-community/slider';
 import { View, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-
+import travelCreated from './travelCreated';
 
 const TravelPrice = () => {
 
     const [sliderState, setSliderState] = React.useState(50);
 
+    const navigation = useNavigation();
+
+    const fim = () => {
+        navigation.navigate('travelCreated'); // Navegue para a tela chamada 'Feed'
+    };
 
     return (
         <View style={style.container}>
             <View style={style.topBar}>
                 <Text style={{ color: 'gray' }}>Ser um Muvver</Text>
-                <Text style={{ color: 'white' }}>Definir preço minimo do deslocamento? </Text>
+                <Text style={{ color: 'white', fontSize: 16 }}>Definir preço minimo do deslocamento? </Text>
             </View>
             <View style={style.centerArea}>
                 <View style={{ alignContent: 'left', width: 350 }}>
@@ -35,8 +41,8 @@ const TravelPrice = () => {
                     <Text style={{ fontWeight: 'bold' }}>{sliderState.toFixed(0)} R$</Text>
                     <Text style={{ color: 'gray', marginTop: 30 }}>Clique no valor acima, para um preço mais específico.</Text>
                 </View>
-                <View style={{ position: 'absolute', bottom: 20 }} > 
-                    <TouchableOpacity style={style.button}>
+                <View style={{ position: 'absolute', bottom: 20 }} >
+                    <TouchableOpacity style={style.button} onPress={fim}>
                         <Text style={{ color: 'white' }}>Avançar</Text>
                     </TouchableOpacity>
                 </View>
@@ -52,12 +58,10 @@ const TravelPrice = () => {
 const style = StyleSheet.create({
     container: {
         flex: 1,
-        display: 'block',
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
-        width: 375,
-        height: 850,
+        
     },
     topBar: {
         backgroundColor: "#222222",
@@ -66,7 +70,7 @@ const style = StyleSheet.create({
         display: 'flex',
         flexDirection: 'col',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-around',
     },
     centerArea: {
         alignItems: 'center',
