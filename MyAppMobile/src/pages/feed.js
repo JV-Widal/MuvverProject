@@ -11,6 +11,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
 import choice from "./choice";
+import star from '../../assets/ic_star.svg';
 
 export default function feed() {
 
@@ -48,7 +49,7 @@ function FeedContent() {
         <View style={style.container}>
             <View style={style.topBar}>
                 <View style={style.header}>
-                    <Text style={{ color: 'white', backgroundColor: 'blue', borderRadius: 3, width: 32, height: 32 }}>Foto</Text>
+                    <Text style={{ color: 'white', backgroundColor: 'blue', borderRadius: 3, width: 32, height: 32, marginLeft: 10 }}>Foto</Text>
                     <Text style={{ color: 'white', width: 200 }}> Feed </Text>
                     <Image style={{ width: 24, height: 24 }} source={Info} />
                     <Image style={{ width: 24, height: 24 }} source={Config} />
@@ -61,36 +62,106 @@ function FeedContent() {
             <View style={style.centerArea}>
 
                 <View style={style.person}>
-                    <View>
-                        <Text>Data</Text>
-                        <Text>Localização</Text>
+                    <View style={{ display: 'flex', flexDirection: 'row' }}>
+                        <View style={{ padding: 5 }}>
+                            <Text style={{ fontSize: 12, fontWeight: 'bold', paddingLeft: 5, }}>Hoje (12/01) - Amanhã (13/01)</Text>
+                            <Text style={style.textoClaro}>Rio Brilhante para Dourados - MS</Text>
+                            <Text style={style.textoClaro}>Passará por Nova Alvorada, Rio Brilhante</Text>
+                        </View>
+
+                        <View style={{ paddingLeft: 40, width: '100%' }}>
+                            <Text>Mínimo</Text>
+                            <Text style={style.textoEscuro}>R$ 150,00</Text>
+                        </View>
                     </View>
-                    <View>
-                        <Text>Mínimo</Text>
-                        <Text>R$</Text>
-                    </View>
-                    <View>
-                        <Text>Foto</Text>
-                        <View>
-                            <View>
-                                <Text>Nome</Text>
-                                <Text>Nota</Text>
+                    <View style={{ display: 'flex', flexDirection: 'row', width: '100%', paddingLeft: 10 }}>
+                        <View style={style.fotos}></View>
+                        <View style={{}}>
+                            <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
+                                <Text style={style.textoEscuro}>João Vitor</Text>
+                                <Text style={style.textoClaro}> •</Text>
+                                <Text style={style.textoEscuro} >5,00</Text>
+                                <Image source={star} style={{ width: 8, height: 8 }} />
                             </View>
-                            <View>
-                                <Text>Entregas</Text>
-                                <Text>Transporte</Text>
+                            <View style={{ display: 'flex', flexDirection: 'row', }}>
+                                <Text style={style.textoClaro}>Verificado</Text>
+                                <Text style={style.textoClaro}>•</Text>
+                                <Text style={style.textoClaro}>70 Entregas</Text>
+                                <Text style={style.textoClaro}>•</Text>
+                                <Text style={style.textoClaro}>Carro</Text>
+
                             </View>
                         </View>
                     </View>
                 </View>
 
                 <View style={style.person}>
+                    <View style={{ display: 'flex', flexDirection: 'row' }}>
+                        <View style={{ padding: 5 }}>
+                            <Text style={{ fontSize: 12, fontWeight: 'bold', paddingLeft: 5, }}>Hoje (12/01) - Amanhã (13/01)</Text>
+                            <Text style={style.textoClaro}>Rio Brilhante para Dourados - MS</Text>
+                            <Text style={style.textoClaro}>Passará por Nova Alvorada, Rio Brilhante</Text>
+                        </View>
 
+                        <View style={{ paddingLeft: 40, width: '100%' }}>
+                            <Text>Mínimo</Text>
+                            <Text style={style.textoEscuro}>R$ 150,00</Text>
+                        </View>
+                    </View>
+                    <View style={{ display: 'flex', flexDirection: 'row', width: '100%', paddingLeft: 10 }}>
+                        <View style={style.fotos}></View>
+                        <View style={{}}>
+                            <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
+                                <Text style={style.textoEscuro}>João Vitor</Text>
+                                <Text style={style.textoClaro}> •</Text>
+                                <Text style={style.textoEscuro} >5,00</Text>
+                                <Image source={star} style={{ width: 8, height: 8 }} />
+                            </View>
+                            <View style={{ display: 'flex', flexDirection: 'row', }}>
+                                <Text style={style.textoClaro}>Verificado</Text>
+                                <Text style={style.textoClaro}>•</Text>
+                                <Text style={style.textoClaro}>70 Entregas</Text>
+                                <Text style={style.textoClaro}>•</Text>
+                                <Text style={style.textoClaro}>Carro</Text>
+
+                            </View>
+                        </View>
+                    </View>
                 </View>
+
                 <View style={style.person}>
+                    <View style={{ display: 'flex', flexDirection: 'row' }}>
+                        <View style={{ padding: 5 }}>
+                            <Text style={{ fontSize: 12, fontWeight: 'bold', paddingLeft: 5, }}>Hoje (12/01) - Amanhã (13/01)</Text>
+                            <Text style={style.textoClaro}>Rio Brilhante para Dourados - MS</Text>
+                            <Text style={style.textoClaro}>Passará por Nova Alvorada, Rio Brilhante</Text>
+                        </View>
 
+                        <View style={{ paddingLeft: 40, width: '100%' }}>
+                            <Text>Mínimo</Text>
+                            <Text style={style.textoEscuro}>R$ 150,00</Text>
+                        </View>
+                    </View>
+                    <View style={{ display: 'flex', flexDirection: 'row', width: '100%', paddingLeft: 10 }}>
+                        <View style={style.fotos}></View>
+                        <View style={{}}>
+                            <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' }}>
+                                <Text style={style.textoEscuro}>João Vitor</Text>
+                                <Text style={style.textoClaro}> •</Text>
+                                <Text style={style.textoEscuro} >5,00</Text>
+                                <Image source={star} style={{ width: 8, height: 8 }} />
+                            </View>
+                            <View style={{ display: 'flex', flexDirection: 'row', }}>
+                                <Text style={style.textoClaro}>Verificado</Text>
+                                <Text style={style.textoClaro}>•</Text>
+                                <Text style={style.textoClaro}>70 Entregas</Text>
+                                <Text style={style.textoClaro}>•</Text>
+                                <Text style={style.textoClaro}>Carro</Text>
+
+                            </View>
+                        </View>
+                    </View>
                 </View>
-
             </View>
             <View style={{ position: 'absolute', bottom: 20 }}>
                 <TouchableOpacity style={style.button} onPress={escolha}>
@@ -108,7 +179,7 @@ const style = StyleSheet.create({
     container: {
         backgroundColor: "#FFFFFF",
         alignItems: 'center',
-        
+
     },
     topBar: {
         backgroundColor: "#222222",
@@ -119,8 +190,9 @@ const style = StyleSheet.create({
         justifyContent: 'flex-end'
     },
     centerArea: {
-        //width: 105,
-        //height: 345,
+        width: '100%',
+        justifyContent: 'center',
+        width: 375,
     },
     bottonBar: {
 
@@ -145,6 +217,23 @@ const style = StyleSheet.create({
     },
     person: {
         height: 160,
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        borderBottomWidth: 1,
+        borderColor: 'black'
+    },
+    fotos: {
+        width: 40,
+        height: 40,
+        backgroundColor: 'gray'
+    },
+    textoClaro: {
+        color: 'gray',
+        paddingLeft: 5
+    },
+    textoEscuro: {
+        fontWeight: 'bold',
     }
 
 });

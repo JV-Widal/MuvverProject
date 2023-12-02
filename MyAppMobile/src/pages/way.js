@@ -10,6 +10,7 @@ import React from 'react';
 import circleplus from '../../assets/circleplus.svg';
 
 import TravelPrice from './travelPrice';
+import Map from './map';
 
 export default function way() {
 
@@ -27,7 +28,15 @@ export default function way() {
 
     const [isHidden, setIsHidden] = React.useState(true);
 
-    
+    const navigation = useNavigation();
+
+    const paraMapa = () => {
+        navigation.navigate('map');
+    };
+
+    const paraPreco = () => {
+        navigation.navigate('travelPrice')
+    };
 
     return (
         <View style={style.container}>
@@ -40,7 +49,9 @@ export default function way() {
                 </View>
                 <View style={{ display: 'flex', flexDirection: 'row', justifyContent: "space-around", alignContent: 'flex-end' }}>
                     <Text style={{ color: 'white' }}>Rotas </Text>
-                    <Text style={{ color: 'white' }}>Objetos </Text>
+                    <TouchableOpacity onPress={paraMapa}>
+                        <Text style={{ color: 'white' }}>Mapa </Text>
+                    </TouchableOpacity>
                 </View>
             </View>
             <View style={style.centerArea}>
@@ -111,7 +122,7 @@ export default function way() {
                     </View>
                 </View>
 
-                <TouchableOpacity style={style.button} onPress={TravelPrice}>
+                <TouchableOpacity style={style.button} onPress={paraPreco}>
                     <Text style={{ color: 'white' }}>Avançar</Text>
                 </TouchableOpacity>
 

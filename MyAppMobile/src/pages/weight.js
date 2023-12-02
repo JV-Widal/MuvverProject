@@ -73,13 +73,13 @@ export default function weight() {
             </View>
 
             <View style={{ paddingBottom: 10, paddingTop: 50 }} >
-                <TouchableOpacity style={{ width: 350, height: 50, alignItems: 'center', justifyContent: 'center' }}>
+                <TouchableOpacity style={{ width: 350, height: 50, alignItems: 'center', justifyContent: 'center' }} onPress={paraPreco}>
                     <Text style={{ color: 'black' }}>Pular Etapa</Text>
                 </TouchableOpacity>
             </View>
 
             <View style={{  paddingBottom: 10}} >
-                <TouchableOpacity style={style.button} onPress={paraPreco}>
+                <TouchableOpacity style={style.button}  disabled={!selectedOption} onPress={paraPreco}>
                     <Text style={{ color: 'white' }}>Avançar</Text>
                 </TouchableOpacity>
             </View>

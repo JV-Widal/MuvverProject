@@ -80,7 +80,7 @@ export default function volumeSize() {
             value: 'caixa_grande'
         },
 
-        // Adicione mais opções conforme necessário
+        
     ];
 
     const handleSelectOption = (value) => {
@@ -122,7 +122,7 @@ export default function volumeSize() {
                 {selectedOption && <Text>Opção selecionada: {selectedOption}</Text>}
 
                 <View style={{}} >
-                    <TouchableOpacity style={{ width: 350, height: 50, alignItems: 'center', justifyContent: 'center' }}>
+                    <TouchableOpacity style={{ width: 350, height: 50, alignItems: 'center', justifyContent: 'center' }} onPress={paraPeso}>
                         <Text style={{ color: 'black' }}>Pular Etapa</Text>
                     </TouchableOpacity>
                 </View>

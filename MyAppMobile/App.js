@@ -15,6 +15,7 @@ import volumeSize from './src/pages/volumeSize';
 import way from './src/pages/way';
 import choice from './src/pages/choice';
 import weight from './src/pages/weight';
+import map from './src/pages/map';
 
 const Stack = createStackNavigator();
 
@@ -22,7 +23,7 @@ export default function App() {
 
   return (
     <NavigationContainer styles={style.container}>
-      <Stack.Navigator initialRouteName="transport" >
+      <Stack.Navigator initialRouteName="home" >
         <Stack.Screen name="home" component={home} options={{ headerShown: false }} />
         <Stack.Screen name="feed" component={feed} options={{ headerShown: false }} />
         <Stack.Screen name="transport" component={transport} options={{ headerShown: false }} />
@@ -32,6 +33,7 @@ export default function App() {
         <Stack.Screen name="way" component={way} options={{ headerShown: false }} />
         <Stack.Screen name="choice" component={choice} options={{ headerShown: false }} />
         <Stack.Screen name="weight" component={weight} options={{ headerShown: false }} />
+        <Stack.Screen name='map' component={map} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   )

@@ -152,7 +152,7 @@ const Transport = () => {
 
             </View>
             <View>
-                <TouchableOpacity style={style.button} onPress={trajeto}>
+                <TouchableOpacity style={style.button} disabled={!selectedOption} onPress={trajeto}>
                     <Text style={{ color: 'white' }}>Avançar</Text>
                 </TouchableOpacity>
             </View>
